@@ -9,20 +9,38 @@
       });
     });
 
-    // Botón de desplazamiento hacia arriba
-    const btn = document.getElementById("btn-back-to-top");
+// Botón "Subir"
+const mainWrapper = document.querySelector(".main-wrapper");
+const btnTop = document.getElementById("btn-back-to-top");
 
-    window.addEventListener("scroll", () => {
-      if (window.scrollY > 2000) {
-        btn.style.display = "block";
-      } else {
-        btn.style.display = "none";
-      }
-    });
+mainWrapper.addEventListener("scroll", () => {
+  if (mainWrapper.scrollTop > 200) {
+    btnTop.style.display = "flex";
+  } else {
+    btnTop.style.display = "none";
+  }
+});
 
-    btn.addEventListener("click", () => {
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-      });
-    });
+btnTop.addEventListener("click", () => {
+  mainWrapper.scrollTo({ top: 0, behavior: "smooth" });
+});
+
+
+// ===== MENÚ HAMBURGUESA =====
+const menuBtn = document.getElementById("btn-menu");
+const navbarList = document.querySelector(".navbar-lista");
+const navLinks = document.querySelectorAll(".navbar-lista .nav-link");
+
+// Abrir / cerrar menú
+menuBtn.addEventListener("click", () => {
+  navbarList.classList.toggle("active");
+  menuBtn.classList.toggle("active");
+});
+
+// Cerrar el menú al hacer clic en cualquier enlace
+navLinks.forEach(link => {
+  link.addEventListener("click", () => {
+    navbarList.classList.remove("active");
+    menuBtn.classList.remove("active");
+  });
+});
