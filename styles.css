@@ -1,0 +1,361 @@
+:root {
+--border-offset: 2rem;
+--frame-margin: 1rem;
+}
+
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+/* Marco negro */
+body::before {
+content: "";
+position: fixed;
+top: 1rem;
+left: 1rem;
+right: 1rem;
+bottom: 1rem;
+border: 1px solid #000;
+z-index: 10;
+pointer-events: none;
+}
+
+body {
+background: rgb(247 247 247);
+font-family: 'Montserrat', sans-serif;
+font-weight: 600;
+color: #111;
+overflow-x: hidden;
+position: relative;
+}
+
+/* Contenedor principal que respeta el marco */
+.main-wrapper {
+margin: var(--frame-margin);
+padding: var(--border-offset);
+min-height: calc(100vh - 2rem);
+position: relative;
+z-index: 5;
+}
+
+/* Navbar */
+.navbar-personalizado {
+position: relative;
+top: 1.5rem;
+right: 1.5rem;
+z-index: 100;
+background: transparent;
+}
+
+.navbar-lista {
+list-style: none;
+margin: 0;
+padding: 0;
+display: flex;
+gap: 1.5rem;
+justify-content: flex-end;
+}
+
+.nav-link {
+color: #111;
+text-decoration: none;
+font-weight: 400;
+font-size: 0.9rem;
+letter-spacing: 0.03em;
+transition: color 0.3s, transform 0.2s;
+padding: 0.3rem 0;
+position: relative;
+}
+
+.nav-link:hover {
+color: rgb(168, 0, 0);
+transform: translateX(2px);
+}
+
+.nav-link::after {
+content: "";
+position: absolute;
+bottom: 0;
+left: 0;
+width: 0;
+height: 1px;
+background-color: rgb(168, 0, 0);
+transition: width 0.3s;
+}
+
+.nav-link:hover::after {
+width: 100%;
+}
+
+/* Hero section - altura viewport */
+.hero-section {
+min-height: 100vh;
+display: flex;
+align-items: center;
+padding-top: 2rem;
+padding-bottom: 2rem;
+position: relative;
+z-index: 5;
+}
+
+/* Títulos */
+h1 {
+font-family: 'Prata', serif;
+font-weight: 700;
+letter-spacing: -0.02em;
+position: relative;
+display: inline-block;
+}
+
+h1::after {
+content: "";
+position: absolute;
+left: 0;
+bottom: -10px;
+height: 2px;
+width: 0;
+background-color: #000;
+animation: underline-draw 1.5s ease forwards;
+animation-delay: 0.3s;
+}
+
+/* Animación de subrayado */
+@keyframes underline-draw {
+from { width: 0; }
+to { width: 100%; }
+}
+
+.section-title {
+font-family: 'Prata', serif;
+font-weight: 700;
+text-transform: lowercase;
+border-bottom: 1px solid rgba(220, 38, 38, 0.1);
+padding-bottom: 0.5rem;
+}
+
+/* Botones personalizados */
+.btn-personalizado {
+padding: 0.5rem 1.5rem;
+background-color: transparent;
+color: #cc0000;
+border: 1px solid #cc0000;
+text-decoration: none;
+transition: background-color 0.3s ease-in-out;
+display: inline-block;
+}
+
+.btn-personalizado:hover {
+background-color: rgba(220, 38, 38, 0.2);
+color: #cc0000;
+}
+
+/* Tarjetas de proyectos */
+.project-card {
+border: 1px solid rgb(0, 0, 0);
+border-radius: 0;
+transition: transform 0.3s, border-color 0.3s;
+backdrop-filter: blur(15px);
+background-color: rgba(255, 255, 255, 0.3);
+box-shadow: 0 -5px 25px rgba(129, 124, 124, 0.1);
+height: 100%;
+}
+
+.project-card:hover {
+transform: translateY(-5px);
+border-color: rgba(220, 38, 38, 0.7);
+}
+
+/* Habilidades */
+.skill-card {
+border: 1px solid rgba(0, 0, 0, 0.1);
+padding: 2rem;
+backdrop-filter: blur(15px);
+background-color: rgba(255, 255, 255, 0.3);
+box-shadow: 0 -5px 25px rgba(129, 124, 124, 0.1);
+transition: 0.4s;
+height: 100%;
+}
+
+.skill-card:hover {
+transform: translateY(-3px);
+border-color: rgba(220, 38, 38, 0.3);
+}
+
+.text-cyber {
+color: rgb(168, 0, 0);
+font-weight: 600;
+text-transform: lowercase;
+}
+
+/* Estilo para sección habilidades, lenguajes de programación */
+.code-tags {
+display: flex;
+flex-wrap: wrap;
+gap: 0.75rem;
+}
+
+.code-tag {
+background: rgba(220, 38, 38, 0.1);
+padding: 0.5rem 1rem;
+font-family: 'Courier New', monospace;
+font-size: 0.9rem;
+border: 1px solid rgba(220, 38, 38, 0.2);
+}
+
+.skill-list {
+display: flex;
+flex-direction: column;
+gap: 1rem;
+}
+
+.skill-item {
+display: flex;
+align-items: center;
+gap: 0.75rem;
+}
+
+.skill-icon {
+color: rgba(220, 38, 38, 0.7);
+font-size: 1.2rem;
+flex-shrink: 0;
+}
+
+#contacto {
+backdrop-filter: blur(15px);
+background-color: rgba(255, 255, 255, 0.3);
+box-shadow: 0 -5px 25px rgba(129, 124, 124, 0.1);
+}
+
+/* Estilo para el formulario */
+.form-label {
+color: rgba(220, 38, 38, 0.7);
+font-weight: 600;
+text-transform: lowercase;
+}
+
+.form-control {
+border: 1px solid rgba(220, 38, 38, 0.2);
+border-radius: 0;
+opacity: 0.7;
+}
+
+footer {
+backdrop-filter: blur(15px);
+background-color: rgba(255, 255, 255, 0.3);
+box-shadow: 0 -5px 25px rgba(129, 124, 124, 0.1);
+margin-top: 4rem;
+border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.social-link {
+color: rgba(220, 38, 38, 0.7);
+transition: opacity 0.3s;
+text-decoration: none;
+}
+
+.social-link:hover {
+opacity: 0.7;
+}
+
+.text-accent {
+color: #666;
+}
+
+/* Blob de fondo */
+.blob-outer-container {
+position: fixed;
+height: 100%;
+width: 100%;
+z-index: 0;
+inset: 0;
+margin: auto;
+filter: blur(50px);
+opacity: 0.9;
+}
+
+.blob-inner-container {
+border-radius: 99999px;
+position: absolute;
+inset: 0;
+margin: auto;
+width: 100vw;
+height: 100vh;
+min-width: 1000px;
+overflow: hidden;
+background-color: #fff;
+transform: scale(0.8);
+}
+
+.blob {
+position: absolute;
+width: calc(100% - 2rem);
+height: calc(100% - 2rem);
+margin: 1rem;
+background: conic-gradient(from 0deg, rgb(202, 2, 2), rgb(211, 0, 35), rgb(211, 0, 0), rgb(255, 127, 8), rgb(235, 0, 0), rgba(253, 15, 15, 0.788));
+animation: spinBlob 20s linear infinite;
+}
+
+@keyframes spinBlob {
+0% { transform: rotate(0deg) scale(2); }
+100% { transform: rotate(1turn) scale(2); }
+}
+
+#btn-back-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid #000;
+  color: #000;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+  display: none;
+  z-index: 9999;
+}
+
+#btn-back-to-top:hover {
+  background-color: rgba(220, 38, 38, 0.7);
+  color: rgba(220, 38, 38, 0.7);
+  border-color: rgba(220, 38, 38, 0.7);
+  transform: translateY(-2px);
+}
+
+
+/* Responsive */
+@media (max-width: 768px) {
+:root {
+--border-offset: 1rem;
+--frame-margin: 0.5rem;
+}
+
+.main-wrapper {
+padding: 1rem;
+}
+
+.navbar-lista {
+gap: 1rem;
+}
+
+.nav-link {
+font-size: 0.8rem;
+}
+
+h1 {
+font-size: 2rem;
+}
+
+.btn-personalizado {
+padding: 0.6rem 1.5rem;
+font-size: 0.9rem;
+}
+
+
+/* Mejora de accesibilidad */
+*:focus-visible {
+outline: 2px solid rgba(220, 38, 38, 0.7);
+outline-offset: 2px;
+}
+
+}
