@@ -456,6 +456,7 @@ footer {
 
   body::before {
     inset: 0.5rem;
+    position: fixed;
   }
 
   .main-wrapper {
