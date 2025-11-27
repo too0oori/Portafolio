@@ -464,9 +464,18 @@ footer {
     bottom: 0.5rem;
   }
 
-  .main-wrapper {
-    max-height: calc(100vh - 1rem); /* el interior sí scrollea */
+.main-wrapper {
+    /* Mantiene las reglas de scroll vertical */
+    max-height: calc(100vh - 1rem); 
     overflow-y: auto;
+    
+    /*Define un padding horizontal mucho más pequeño** */
+    padding: 0.5rem 0.5rem 0 0.5rem; 
+  }
+
+  .container-aligned {
+    /* Reduce el padding interior del contenedor de 1.5rem (heredado de 992px) a 0.5rem */
+    padding: 0 0.5rem; 
   }
 
   .hero-section {
@@ -475,7 +484,7 @@ footer {
   }
 
   #proyectos, #habilidades, #contacto {
-    padding: 2.5rem 1.5rem;
+    padding: 2.5rem 1rem;
     margin: 2rem auto;
   }
 
