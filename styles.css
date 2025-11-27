@@ -470,7 +470,7 @@ footer {
     overflow-y: auto;
     
     /*Define un padding horizontal mucho más pequeño** */
-    padding: 0.5rem 0.5rem 0 0.5rem; 
+    padding: 0.5rem 0.5rem 1rem 0.5rem;
   }
 
   .container-aligned {
