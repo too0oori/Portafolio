@@ -455,9 +455,13 @@ footer {
   }
 
   body::before {
-    inset: 0.5rem;
     position: fixed;
+    top: 0.5rem;
+    left: 0.5rem;
+    right: 0.5rem;
+    bottom: 0.5rem;
   }
+
 
   .main-wrapper {
     padding: 0 1rem;
