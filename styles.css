@@ -452,21 +452,21 @@ footer {
 @media (max-width: 768px) {
   body {
     padding: 0.5rem;
+    overflow: hidden;      /* evita crecimiento infinito del body */
+    height: 100vh;         /* fuerzo tamaño exacto de viewport */
   }
 
   body::before {
-    position: fixed;
+    position: fixed;       /* que sea SIEMPRE del tamaño de la pantalla */
     top: 0.5rem;
     left: 0.5rem;
     right: 0.5rem;
     bottom: 0.5rem;
   }
 
-
   .main-wrapper {
-    padding: 0 1rem;
-    padding-top: 0.5rem;
-    max-height: calc(100vh - 1rem);
+    max-height: calc(100vh - 1rem); /* el interior sí scrollea */
+    overflow-y: auto;
   }
 
   .hero-section {
