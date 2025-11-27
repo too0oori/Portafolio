@@ -470,17 +470,17 @@ footer {
     overflow-y: auto;
     
     /*Define un padding horizontal mucho más pequeño** */
-    padding: 0.5rem 0.5rem 1rem 0.5rem;
+    padding: 0 0 2rem 0;
   }
 
   .container-aligned {
     /* Reduce el padding interior del contenedor de 1.5rem (heredado de 992px) a 0.5rem */
-    padding: 0 0.5rem; 
+    padding: 0 0.5rem;
   }
 
   .hero-section {
     min-height: calc(100vh - 6rem);
-    padding: 2rem 1rem;
+    padding: 2rem 0; /* Solo padding vertical */
   }
 
   #proyectos, #habilidades, #contacto {
