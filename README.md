@@ -197,6 +197,7 @@ Sistema completo para biblioteca digital con Django, SQLite y Bootstrap.
 ### 2. A Medias Tintas - E-commerce
 Tienda online de poleras serigrafiadas con carrito y gestión de pedidos.
 - [Ver código](https://github.com/too0oori/M7_Portafolio_SofiaLagos)
+- [Ver sitio](https://a-medias-tintas-e-commerce.onrender.com/)
 
 ### 3. ProductManager
 Gestor de productos con PostgreSQL y operaciones CRUD completas.
@@ -235,4 +236,5 @@ Me interesa trabajar en entornos que integren **tecnología, educación, cultura
 **Hecho con ❤️ y mucho ☕ por Sofía [tori]**
 
 **© 2025 Sofía Lagos — Portafolio profesional Full Stack Python**
+
 
