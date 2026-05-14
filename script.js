@@ -62,3 +62,45 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     }
   });
 });
+
+// Formulario de contacto con Formspree (sin redirección)
+const contactForm = document.getElementById('contact-form');
+const formStatus = document.getElementById('form-status');
+const submitBtn = document.getElementById('submit-btn');
+
+if (contactForm) {
+  contactForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    submitBtn.textContent = 'Enviando...';
+    submitBtn.disabled = true;
+
+    try {
+      const response = await fetch(contactForm.action, {
+        method: 'POST',
+        body: new FormData(contactForm),
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (response.ok) {
+        formStatus.textContent = '✦ Mensaje enviado. ¡Gracias por escribir!';
+        formStatus.style.display = 'block';
+        formStatus.style.background = 'rgba(255,255,255,0.4)';
+        formStatus.style.border = '1px solid rgba(168,0,0,0.3)';
+        formStatus.style.color = 'var(--accent)';
+        contactForm.reset();
+      } else {
+        throw new Error();
+      }
+    } catch {
+      formStatus.textContent = '✦ Algo salió mal. Intenta escribirme directo a sofia.lagos.cesped@gmail.com';
+      formStatus.style.display = 'block';
+      formStatus.style.background = 'rgba(255,255,255,0.4)';
+      formStatus.style.border = '1px solid rgba(0,0,0,0.15)';
+      formStatus.style.color = 'var(--text-dark)';
+    } finally {
+      submitBtn.textContent = 'Enviar';
+      submitBtn.disabled = false;
+    }
+  });
+}

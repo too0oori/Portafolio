@@ -35,7 +35,7 @@
         <li><a href="#habilidades" class="nav-link">Habilidades</a></li>
         <li><a href="#proyectos" class="nav-link">Proyectos</a></li>
         <li><a href="#contacto" class="nav-link">Contacto</a></li>
-      </ul>
+        <li><a href="assets/cv/Sofia_Lagos_CV1.pdf" class="nav-link" download="Sofia_Lagos_CV1.pdf">Descargar CV</a></li>
     </nav>
 
     <section id="inicio" class="hero-section">
@@ -134,11 +134,11 @@
 
                 <!-- Proyecto 3 -->
         <div class="col-md-6 col-lg-4 d-flex">
-          <div class="card project-card"">
+          <div class="card project-card">
             <div class="card-body text-center">
               <h5 class="card-title text-cyber mb-3">ProductManager · Gestión de productos en Django</h5>
               
-              <div class="mb-3" style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#ModalProductManager">
+              <div class="mb-3" style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#ProductManagerLabel">
                 <img src="assets/productmanager.JPG" alt="Gestor de productos ProductManager con Django" class="img-fluid rounded" loading="lazy" decoding="async">
                 <p class="text-muted small mt-2 mb-0">
                   <i class="fas fa-images"></i> Click para ver más capturas
@@ -205,40 +205,27 @@
     </section>
 
     <section id="contacto" class="py-5">
-      <div class="container-aligned">
-        <div class="row">
-          <div class="col-12">
-            <h2 class="display-5 section-title mb-5">contáctame</h2>
-          </div>
+      <form class="col-md-6" id="contact-form" action="https://formspree.io/f/mdabrdwb" method="POST">
+        <div class="mb-3">
+          <label for="name" class="form-label">Nombre *</label>
+          <input type="text" class="form-control" id="name" name="name" placeholder="Ingresa tu nombre" required>
         </div>
-        <div class="row">
-          <div class="col-md-6">
-            <div class="mb-3">
-              <label for="name" class="form-label">Nombre *</label>
-              <input type="text" class="form-control" id="name" placeholder="Ingresa tu nombre" required>
-            </div>
 
-            <div class="mb-3">
-              <label for="email" class="form-label">Correo electrónico *</label>
-              <input type="email" class="form-control" id="email" placeholder="Ingresa tu correo electrónico" required>
-            </div>
-
-            <div class="mb-3">
-              <label for="message" class="form-label">Mensaje *</label>
-              <textarea class="form-control" id="message" rows="5" placeholder="Escribe tu mensaje" required></textarea>
-            </div>
-            <button type="button" class="btn-personalizado" onclick="alert('Formulario de ejemplo - implementa tu lógica de envío')">Enviar</button>
-          </div>
-          
-          <div class="col-md-6 text-center d-none d-md-flex align-items-center justify-content-center">
-            <div class="contacto-ilustracion-container">
-              <img src="assets/dibujo.svg" class="contacto-ilustracion" alt="Ilustración de contacto">
-              <svg class="contacto-ilustracion-decoracion">
-              </svg>
-            </div>
-          </div>
+        <div class="mb-3">
+          <label for="email" class="form-label">Correo electrónico *</label>
+          <input type="email" class="form-control" id="email" name="email" placeholder="Ingresa tu correo electrónico" required>
         </div>
-      </div>
+
+        <div class="mb-3">
+          <label for="message" class="form-label">Mensaje *</label>
+          <textarea class="form-control" id="message" name="message" rows="5" placeholder="Escribe tu mensaje" required></textarea>
+        </div>
+
+        <!-- Mensaje de éxito/error oculto -->
+        <div id="form-status" class="mb-3" style="display:none; padding: 0.75rem 1rem; border-radius: 4px;"></div>
+
+        <button type="submit" class="btn-personalizado" id="submit-btn">Enviar</button>
+      </form>
     </section>
 
     <footer>
